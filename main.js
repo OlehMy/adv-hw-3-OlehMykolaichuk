@@ -28,7 +28,7 @@ function calcSalaryAfterTaxes(salaryWithoutTaxes) {
 
 // 5) Функція, яка повертає випадкове ціле число в діапазоні від N до M
 function getRandomNumberFromNToM(numberN, numberM) {
-    const randomNumber = Math.random().toFixed(2);
+    const randomNumber = Math.random();
     const randomNumberFromNToM = Math.round(numberN + randomNumber * (numberM - numberN));
     return randomNumberFromNToM;
 }

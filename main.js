@@ -7,11 +7,13 @@ function getMaxDigitOfNumber(number) {
 
 // 2) Функція, яка визначає ступінь числа
 function calcXToThePowerOfY(numberX, numberY) {
-    let xToThePowerOfN;
+    let xToThePowerOfY;
     if (numberY === 0) {
         xToThePowerOfY = 1;
     } else if (numberY === 1) {
         xToThePowerOfY = numberX;
+    } else if (numberY < 0) {
+        xToThePowerOfY = (1 / calcXToThePowerOfY(numberX, -numberY - 1)).toFixed(10);
     } else {
         xToThePowerOfY = numberX * calcXToThePowerOfY(numberX, numberY - 1);
     }
@@ -54,7 +56,7 @@ function isPalyndrom(palyndrom) {
 console.log(
     `Виклик функцій:
     Функція №1: ${getMaxDigitOfNumber(123456789)};
-    Функція №2: ${calcXToThePowerOfY(3, 7)};
+    Функція №2: ${calcXToThePowerOfY(7, -2)};
     Функція №4: ${calcSalaryAfterTaxes(30000)};
     Функція №5: ${getRandomNumberFromNToM(1, 100)};
     Функція №8: ${getRandomPassword()};
